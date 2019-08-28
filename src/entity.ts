@@ -43,43 +43,66 @@ export default class extends Abstract implements Ktp {
     job                 !: null|{toString:()=>string};
     validUntil          !: null|{toString:()=>string};
 
+    toJson(): string {
+
+        return JSON.stringify({
+            province           : this.province + '',
+            regencyCity        : this.regencyCity + '',
+            issued             : this.issued + '',
+            nik                : this.nik + '',
+            name               : this.name + '',
+            gender             : this.gender + '',
+            placeAndDateOfBirth: this.placeAndDateOfBirth + '',
+            bloodType          : this.bloodType + '',
+            rtRw               : this.rtRw + '',
+            address            : this.address + '',
+            village            : this.village + '',
+            district           : this.district + '',
+            religion           : this.religion + '',
+            marital            : this.marital + '',
+            nationality        : this.nationality + '',
+            job                : this.job + '',
+            validUntil         : this.validUntil + '',
+        });
+    }
+
     protected setEntity(vertices: Vertices, texts: string[], edge : Side) {
 
-        console.log(vertices.join('|'));
+        //console.log(vertices.join('|'));
 
-        console.log('headerProvince>>>>>>>>>>>>>>>>'+ vertices.toString());
+        //console.log('headerProvince>>>>>>>>>>>>>>>>'+ vertices.toString());
         this.province      = new DocumentTypeProvince(vertices);
-        console.log('headerCity>>>>>>>>>>>>>>>>>>>>'+ vertices.toString());
+        //console.log('headerCity>>>>>>>>>>>>>>>>>>>>'+ vertices.toString());
         this.regencyCity          = new HeaderCity(vertices, this.edge);
-        console.log('nik>>>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('nik>>>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
         this.nik                 = new Nik(vertices);
-        console.log('name>>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('name>>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
         this.name                = new Name(vertices);
-        console.log('placeAndDateOfBirth>>>>>>>>>>>' + vertices.toString());
+        //console.log('placeAndDateOfBirth>>>>>>>>>>>' + vertices.toString());
         this.placeAndDateOfBirth = new PlaceDateBirth(vertices, this.edge);
-        console.log('bloodType>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('bloodType>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
         this.bloodType           = new BloodType(vertices, edge);
-        console.log('issued>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('issued>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
         this.issued              = new Issued(vertices, edge);
-        console.log('gender>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('gender>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
         this.gender              = new Gender(vertices, edge);
-        console.log('RT RW>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('RT RW>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
         this.rtRw                = new RtRw(vertices, this.edge);
-        console.log('address>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('address>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
          this.address             = new Address(vertices);
-        console.log('kelurahanDesa>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('kelurahanDesa>>>>>>>>>>>>>>>>>' + vertices.toString());
          this.village       = new VillageKelurahan(vertices);
-        console.log('kecamatan>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('kecamatan>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
          this.district           = new Kecamatan(vertices);
-        console.log('religion>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('religion>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
         this.religion            = new Religion (vertices);
-        console.log('marital>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('marital>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
          this.marital             = new Marital(vertices);
-        console.log('nationality>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('nationality>>>>>>>>>>>>>>>>>>>' + vertices.toString());
          this.nationality         = new Nationality(vertices);
-        console.log('job>>>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('job>>>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
          this.job                 = new Job(vertices, edge);
-        console.log('validUntil>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
+        //console.log('validUntil>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
         this.validUntil          = new ValidUntil(vertices, this.edge);
     }
 
