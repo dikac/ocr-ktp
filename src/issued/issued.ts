@@ -39,7 +39,7 @@ export default class extends ToString<Vertices<Vertex>>  {
         // KARTU is printed as watermark in card, sometime registered
         let noise = Validated(fetch, (v:Vertex) => new Approximate(v, 2, ['KARTU']));
 
-        if(noise.valid()) {
+        if(noise.valid) {
 
             fetch.remove(noise);
         }
@@ -56,7 +56,7 @@ export default class extends ToString<Vertices<Vertex>>  {
 
         this.location = new LocationName(flatten);
 
-        if(this.location.valid()) {
+        if(this.location.valid) {
 
             vertices.remove(this.location);
             flatten.remove(this.location);
@@ -65,7 +65,7 @@ export default class extends ToString<Vertices<Vertex>>  {
 
         this.date = new Date(flatten);
 
-        if(this.date.valid()) {
+        if(this.date.valid) {
 
             vertices.remove(this.date);
 
@@ -75,7 +75,7 @@ export default class extends ToString<Vertices<Vertex>>  {
 
         this.value = new StdVertices([], ', ');
 
-        if(this.location && this.location.valid()) {
+        if(this.location && this.location.valid) {
 
             this.value.append(new Combine(this.location));
             //vertices.remove(divider[0]);
@@ -85,7 +85,7 @@ export default class extends ToString<Vertices<Vertex>>  {
         }
 
 
-        if(this.date && this.date.valid()) {
+        if(this.date && this.date.valid) {
 
             this.value.append(new Combine(this.date));
             //vertices.remove(divider[0]);

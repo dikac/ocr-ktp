@@ -18,19 +18,19 @@ export default class Value extends Wrapper {
 
         let date = new Date(vertices);
 
-        if(date.valid()) {
+        if(date.valid) {
 
             this.vertices = date;
         }
 
-        if(!this.valid()) {
+        if(!this.valid) {
 
             let approximate = Validated<TextValue>(
                 vertices,
                 (v:Vertex) => new TextValue(v)
             );
 
-            if(approximate.valid()) {
+            if(approximate.valid) {
 
                 SortLeft(approximate);
 

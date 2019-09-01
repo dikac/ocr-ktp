@@ -20,7 +20,7 @@ export default class extends StandardConfidence {
         let label = Validated<ApproximateList>
         (vertices, (v:Vertex) => new ApproximateList(v, list ));
 
-        if(label.valid()) {
+        if(label.valid) {
 
             this.append(label);
             return;

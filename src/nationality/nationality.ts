@@ -24,7 +24,7 @@ export default class extends ToString implements Label {
 
         this.label = divider.label;
 
-        // if(divider.label.valid()) {
+        // if(divider.label.valid) {
         //
         //     let center = new Center(new Edge(vertices));
         //
@@ -56,7 +56,7 @@ export default class extends ToString implements Label {
         //     console.log(d.join('|'));
         // }
 
-        if(divider.label.valid()) {
+        if(divider.label.valid) {
 
             let flatten = Flattens(divider.slice(0, 1));
 

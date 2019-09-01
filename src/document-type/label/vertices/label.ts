@@ -17,7 +17,7 @@ export default class extends StandardConfidence {
             (v : Vertex) => new Approximate(v, 2, ['PROVINSI'])
         );
 
-        if(label.valid()) {
+        if(label.valid) {
 
             this.append(label);
         }

@@ -29,13 +29,13 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
         this.label = divider.label;
 
-        if(divider.label.valid()) {
+        if(divider.label.valid) {
 
             vertices.remove(Flattens(divider.removed));
 
             let flatten = Flattens(divider.slice(0, 2));
 
-            if(flatten.valid()) {
+            if(flatten.valid) {
 
                 let finds = new Finds(flatten);
 
@@ -49,9 +49,9 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
 
         // No label
-        if(!this.value.valid()){
+        if(!this.value.valid){
 
-            let clone = vertices.clone();
+            let clone = vertices.clone;
 
             let divider = new LabelTrimDivider<LabelPlaceDateOfBirth>(clone, (v:Vertices) => new LabelPlaceDateOfBirth(v));
 
@@ -69,7 +69,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
         //
         //     let finds = new Finds(divider[i]);
         //
-        //     if(finds.valid()) {
+        //     if(finds.valid) {
         //
         //         vertices.remove(finds);
         //
@@ -77,7 +77,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
         //
         //             let sequence = new Sequence(divider[i + 1]);
         //
-        //             if(sequence.valid()) {
+        //             if(sequence.valid) {
         //
         //                 vertices.remove(sequence);
         //

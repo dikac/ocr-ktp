@@ -49,7 +49,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label {
         this.label = divider.label;
 
 
-        if(divider.label.valid()) {
+        if(divider.label.valid) {
 
             vertices.remove(divider.label);
 
@@ -68,7 +68,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label {
                 // console.log('alias');
                 // console.log(this.location.join('|'));
 
-                if(this.location.valid()) {
+                if(this.location.valid) {
 
                     vertices.remove(this.location);
                     flatten.remove(this.location);
@@ -81,7 +81,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label {
 
                 this.date = new Date(flatten);
 
-                if(this.date.valid()) {
+                if(this.date.valid) {
 
                     vertices.remove(this.date);
 
@@ -96,7 +96,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label {
 
        // console.log('LOCATION');
 
-        if(this.location && this.location.valid()) {
+        if(this.location && this.location.valid) {
 
             // for (let v of this.location) {
             //
@@ -113,7 +113,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label {
 
         //console.log('DATE');
 
-        if(this.date && this.date.valid()) {
+        if(this.date && this.date.valid) {
 
             // for (let v of this.date) {
             //

@@ -25,7 +25,7 @@ export default class extends StandardConfidence {
             (v : Vertex)=> new ApproximateList(v, list)
         );
 
-        if(label.valid()) {
+        if(label.valid) {
 
             this.append(label);
         }
@@ -34,7 +34,7 @@ export default class extends StandardConfidence {
 
         let find = new Find(vertices, (v:Vertex) => new Text(v, ['/']));
 
-        if(find.valid()) {
+        if(find.valid) {
 
             this.append(find);
         }

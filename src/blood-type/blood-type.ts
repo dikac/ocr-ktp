@@ -30,7 +30,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
         // remove dot from Blood Type
         let dot = new Find(fetch, (v : Vertex) => new Text(v, ['.']));
 
-        if(dot.valid()) {
+        if(dot.valid) {
 
             fetch.remove(dot);
             vertices.remove(dot);
@@ -40,7 +40,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
         this.label = divider.label;
 
-        if(divider.label.valid()) {
+        if(divider.label.valid) {
 
             vertices.remove(divider.label);
 
