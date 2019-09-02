@@ -1,7 +1,7 @@
 {
   "name": "ocr-ktp",
   "version": "0.0.1",
-  "description": "",
+  "description": "kto ocr filter",
   "main": "dist",
   "dependencies": {
     "ktp-entity": "git+https://github.com/dikac/ktp-entity.git",
