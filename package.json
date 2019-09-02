@@ -5,6 +5,7 @@
   "main": "",
   "dependencies": {
     "ktp-entity": "git+https://github.com/dikac/ktp-entity.git",
+    "typescript": "^3.5.3",
     "lits": "git+https://github.com/dikac/lits.git",
     "ocr-document": "git+https://github.com/dikac/ocr-document.git"
   },
