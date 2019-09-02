@@ -2,7 +2,7 @@
   "name": "ocr-ktp",
   "version": "0.0.1",
   "description": "",
-  "main": "",
+  "main": "dist",
   "dependencies": {
     "ktp-entity": "git+https://github.com/dikac/ktp-entity.git",
     "typescript": "^3.5.3",
