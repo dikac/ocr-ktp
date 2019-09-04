@@ -1,0 +1,21 @@
+{
+  "original" : [{
+    "faceAnnotations"  :[],
+    "landmarkAnnotations" :[],
+    "logoAnnotations" :[],
+    "labelAnnotations"  :[],
+    "textAnnotations" :[],
+    "localizedObjectAnnotations"  :[],
+    "safeSearchAnnotation"  :null,
+    "imagePropertiesAnnotation" : null,
+    "error"  : null,
+    "cropHintsAnnotation" :null,
+    "fullTextAnnotation"  : {
+      "pages" : [{"width": 0}],
+      "text" : ""
+    },
+    "webDetection"  :null,
+    "productSearchResults" : null,
+    "context"  : null}],
+  "filtered" : {}
+}

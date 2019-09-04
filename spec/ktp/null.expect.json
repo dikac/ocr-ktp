@@ -1,0 +1,19 @@
+{
+    "province"            : "",
+    "regencyCity"         : "",
+    "issued"              : "",
+    "nik"                 : "",
+    "name"                : "",
+    "gender"              : "",
+    "placeAndDateOfBirth" : "",
+    "bloodType"           : "",
+    "rtRw"                : "",
+    "address"             : "",
+    "village"             : "",
+    "district"            : "",
+    "religion"            : "",
+    "marital"             : "",
+    "nationality"         : "",
+    "job"                 : "",
+    "validUntil"          : ""
+}

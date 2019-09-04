@@ -4,10 +4,11 @@
   "description": "kto ocr filter",
   "main": "dist",
   "dependencies": {
+    "@types/node": "^12.7.4",
     "ktp-entity": "git+https://github.com/dikac/ktp-entity.git",
-    "typescript": "=3.5.3",
     "lits": "git+https://github.com/dikac/lits.git",
-    "ocr-document": "git+https://github.com/dikac/ocr-document.git"
+    "ocr-document": "git+https://github.com/dikac/ocr-document.git",
+    "typescript": "=3.5.3"
   },
   "devDependencies": {
     "@types/jasmine": "^3.4.0",
