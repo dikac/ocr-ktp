@@ -1,4 +1,6 @@
 import * as fs from 'fs';
+import Entity from "../src/entity";
+
 
 export default function(testFolder : string) {
 
@@ -9,9 +11,9 @@ export default function(testFolder : string) {
             let sources = testFolder + '/' + file;
             let expect : string;
 
-            if(fs.existsSync(path) && fs.lstatSync(path).isFile() && path.match(/\.test\.js$/)) {
+            if(fs.existsSync(sources) && fs.lstatSync(sources).isFile() && sources.match(/(^expect)\.json$/)) {
 
-                expect = path;
+                console.log(sources);
             }
         });
     });

@@ -23,7 +23,7 @@ import PlaceDateBirth from "./place-date-birth/place-date-birth";
 import Side from "ocr-core/dist/side/side";
 import Find from "ocr-core/dist/vertex/find";
 
-export default class extends Abstract implements Ktp {
+export default class Entity extends Abstract implements Ktp {
 
     province            !: null|{toString:()=>string};
     regencyCity         !: null|{toString:()=>string};
