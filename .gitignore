@@ -1,5 +1,5 @@
 .idea
-dist-dist/
+dist-spec/
 dist/
 package-lock.json
 # Logs
