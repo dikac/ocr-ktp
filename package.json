@@ -21,8 +21,10 @@
     "compile": "tsc",
     "compile-watch": "tsc -w",
     "install": "tsc",
-    "spec-compile": "tsc -p tsconfig-spec.json",
-    "spec-compile-watch": "tsc -w -p tsconfig-spec.json",
+    "spec-compile": "npm-run-all --parallel spec-compile-script spec-asset",
+    "spec-compile-watch": "npm-run-all --parallel spec-compile-watch-script spec-asset-watch",
+    "spec-compile-script": "tsc -p tsconfig-spec.json",
+    "spec-compile-watch-script": "tsc -w -p tsconfig-spec.json",
     "spec": "jasmine --config=./jasmine.json",
     "spec-asset-watch": "cpx \"spec/**/*.{jpg,json}\" dist-spec/spec --watch --verbose",
     "spec-asset": "cpx \"spec/**/*.{jpg,json}\" dist-spec/spec --verbose"
