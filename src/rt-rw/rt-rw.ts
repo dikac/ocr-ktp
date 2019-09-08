@@ -5,8 +5,8 @@ import Horizontal from "ocr-core/dist/vertex/validatable/horizontal-area";
 import StdRange from "lits/dist/range/standard";
 import Side from "ocr-core/dist/side/side";
 import LabelTrimDivider from "ocr-core/dist/vertices/array/label-trim-divider";
-import LabelRtRw from "ocr-document/dist/vertices/rt-rw/label";
-import Value from "ocr-document/dist/vertices/rt-rw/value";
+import LabelRtRw from "ocr-document/dist/rt-rw/vertices/label";
+import Value from "ocr-document/dist/rt-rw/vertices/value";
 import Find from "ocr-core/dist/vertex/find";
 import Text from "ocr-core/dist/vertex/validatable/text";
 import ToString from "ocr-document/dist/value/to-string";
@@ -53,7 +53,9 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
             let flatten = Flattens(divider.slice(0, 1));
 
+            console.log(flatten);
             let value = new Value(flatten);
+            console.log(Flattens([value]));
             vertices.remove(value);
             this.value = value;
         }

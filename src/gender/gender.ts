@@ -1,5 +1,5 @@
 import Vertices from "ocr-core/dist/vertices/vertices";
-import Value from "ocr-document/dist/vertices/gender/value";
+import Value from "ocr-document/dist/gender/vertices/value";
 import GenderLabel from "../gender/label/vertices/label";
 import Horizontal from "ocr-core/dist/vertex/validatable/horizontal-area";
 import StdRange from "lits/dist/range/standard";

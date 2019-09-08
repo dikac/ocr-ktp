@@ -66,44 +66,109 @@ export default class Entity extends Abstract implements Ktp {
         });
     }
 
+    protected setProvince(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.province = new DocumentTypeProvince(vertices);
+    }
+
+    protected setRegencyCity(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.regencyCity          = new HeaderCity(vertices, this.edge);
+    }
+
+    protected setNik(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.nik                 = new Nik(vertices);
+
+    }
+
+
+    protected setName(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.name                = new Name(vertices);
+    }
+
+    protected setPlaceAndDateOfBirth(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.placeAndDateOfBirth = new PlaceDateBirth(vertices, this.edge);
+    }
+
+    protected setBloodType(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.bloodType           = new BloodType(vertices, edge);
+    }
+
+    protected setIssued(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.issued              = new Issued(vertices, edge);
+    }
+
+    protected setGender(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.gender              = new Gender(vertices, edge);
+    }
+
+    protected setAddress(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.address             = new Address(vertices);
+    }
+
+    protected setRtRw(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.rtRw                = new RtRw(vertices, this.edge);
+    }
+
+    protected setVillage(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.village       = new VillageKelurahan(vertices);
+    }
+
+    protected setDistrict(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.district           = new Kecamatan(vertices);
+    }
+
+    protected setReligion(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.religion            = new Religion (vertices);
+    }
+    protected setMarital(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.marital             = new Marital(vertices);
+
+    }
+    protected setNationality(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.nationality         = new Nationality(vertices);
+    }
+    protected setJob(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.job                 = new Job(vertices, edge);
+    }
+    protected setValidUntil(vertices: Vertices, texts: string[], edge : Side) {
+
+        this.validUntil          = new ValidUntil(vertices, this.edge);
+    }
+
     protected setEntity(vertices: Vertices, texts: string[], edge : Side) {
 
-        //console.log(vertices.join('|'));
-
-        //console.log('headerProvince>>>>>>>>>>>>>>>>'+ vertices.toString());
-        this.province      = new DocumentTypeProvince(vertices);
-        //console.log('headerCity>>>>>>>>>>>>>>>>>>>>'+ vertices.toString());
-        this.regencyCity          = new HeaderCity(vertices, this.edge);
-        //console.log('nik>>>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-        this.nik                 = new Nik(vertices);
-        //console.log('name>>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-        this.name                = new Name(vertices);
-        //console.log('placeAndDateOfBirth>>>>>>>>>>>' + vertices.toString());
-        this.placeAndDateOfBirth = new PlaceDateBirth(vertices, this.edge);
-        //console.log('bloodType>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-        this.bloodType           = new BloodType(vertices, edge);
-        //console.log('issued>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-        this.issued              = new Issued(vertices, edge);
-        //console.log('gender>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-        this.gender              = new Gender(vertices, edge);
-        //console.log('RT RW>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-        this.rtRw                = new RtRw(vertices, this.edge);
-        //console.log('address>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-         this.address             = new Address(vertices);
-        //console.log('kelurahanDesa>>>>>>>>>>>>>>>>>' + vertices.toString());
-         this.village       = new VillageKelurahan(vertices);
-        //console.log('kecamatan>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-         this.district           = new Kecamatan(vertices);
-        //console.log('religion>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-        this.religion            = new Religion (vertices);
-        //console.log('marital>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-         this.marital             = new Marital(vertices);
-        //console.log('nationality>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-         this.nationality         = new Nationality(vertices);
-        //console.log('job>>>>>>>>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-         this.job                 = new Job(vertices, edge);
-        //console.log('validUntil>>>>>>>>>>>>>>>>>>>>' + vertices.toString());
-        this.validUntil          = new ValidUntil(vertices, this.edge);
+        this.setProvince(vertices, texts, edge);
+        this.setRegencyCity(vertices, texts, edge);
+        this.setNik(vertices, texts, edge);
+        this.setName(vertices, texts, edge);
+        this.setPlaceAndDateOfBirth(vertices, texts, edge);
+        this.setBloodType(vertices, texts, edge);
+        this.setIssued(vertices, texts, edge);
+        this.setGender(vertices, texts, edge);
+        this.setRtRw(vertices, texts, edge);
+        this.setAddress(vertices, texts, edge);
+        this.setVillage(vertices, texts, edge);
+        this.setDistrict(vertices, texts, edge);
+        this.setReligion(vertices, texts, edge);
+        this.setMarital(vertices, texts, edge);
+        this.setNationality(vertices, texts, edge);
+        this.setJob(vertices, texts, edge);
+        this.setValidUntil(vertices, texts, edge);
     }
 
     protected getAnchorPoint(vertices : Vertices, texts: string[]): Vertex {

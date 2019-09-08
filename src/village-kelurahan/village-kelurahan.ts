@@ -1,6 +1,6 @@
 import Vertices from "ocr-core/dist/vertices/vertices";
 import LabelVillageKelurahan from "../village-kelurahan/label/vertices/label";
-import Location from "ocr-document/dist/vertices/location/value/value";
+import Location from "ocr-document/dist/location/vertices/value";
 import LabelTrimDivider from "ocr-core/dist/vertices/array/label-trim-divider";
 import ToString from "ocr-document/dist/value/to-string";
 import Vertex from "ocr-core/dist/vertex/vertex";

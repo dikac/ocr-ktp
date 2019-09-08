@@ -1,0 +1,62 @@
+// import * as Fs from 'fs';
+// import Entity from "../src/entity";
+// import Flatten from "ktp-entity/dist/flatten";
+// import property from "ktp-entity/dist/array/properties";
+// import Logged from "../src/logged";
+//
+// let folder = __dirname + '/json';
+//
+// it("force console log", () => {
+//     spyOn(console, 'log').and.callThrough();
+// });
+//
+// let files : string[] = Fs.readdirSync(folder);
+//
+// describe("json test",   function() {
+//
+//     it("exist",  function () {
+//
+//         expect(Fs.existsSync(folder)).toBe(true);
+//
+//     });
+//
+// });
+//
+// files = ['/135deg.expect.json' ];
+//
+// describe("json test",function() {
+//
+//
+//     for (let file of files) {
+//
+//         if(file.match(/\.expect\.json$/)) {
+//
+//             let expected = folder + '/' + file;
+//             let source = folder + '/' + file.replace(/\.expect\.json$/, '.json');
+//
+//             it(expected, function () {
+//
+//                 try {
+//
+//                     let ktp = Flatten(new Logged(JSON.parse(Fs.readFileSync(source).toString()).original[0]));
+//                     let expectation = Flatten(JSON.parse(Fs.readFileSync(expected).toString()));
+//
+//                     console.log(ktp);
+//
+//                     for(let prop of property) {
+//
+//                         expect(expectation[prop]).toEqual(ktp[prop]);
+//                     }
+//
+//                 } catch (e) {
+//
+//                     fail(expected);
+//                     console.log(e);
+//                 }
+//
+//             });
+//         }
+//
+//     }
+//
+// });

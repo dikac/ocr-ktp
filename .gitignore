@@ -1,7 +1,6 @@
 .idea
 dist-spec/
 dist/
-package-lock.json
 # Logs
 logs
 *.log

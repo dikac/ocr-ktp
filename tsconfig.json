@@ -5,6 +5,7 @@
     "module": "umd",
     "declaration": true,
     "target": "es2016",
+    "esModuleInterop": true,
     "outDir": "dist",
     "sourceMap": true,
     "downlevelIteration" : true,

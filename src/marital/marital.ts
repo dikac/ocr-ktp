@@ -1,5 +1,5 @@
 import Vertices from "ocr-core/dist/vertices/vertices";
-import Value from "ocr-document/dist/vertices/marital/value";
+import Value from "ocr-document/dist/marital/vertices/value";
 import LabelMarital from "../marital/label/vertices/label";
 import LabelTrimDivider from "ocr-core/dist/vertices/array/label-trim-divider";
 import ToString from "ocr-document/dist/value/to-string";

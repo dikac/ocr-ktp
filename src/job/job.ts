@@ -9,7 +9,7 @@ import Vertex from "ocr-core/dist/vertex/vertex";
 import ApproximateList from "ocr-core/dist/vertex/validatable/approximate-list";
 import Validated from "ocr-core/dist/vertices/validated";
 import LabelTrimDivider from "ocr-core/dist/vertices/array/label-trim-divider";
-import JobLabel from "ocr-document/dist/vertices/job/label";
+import JobLabel from "ocr-document/dist/job/vertices/label";
 import ToString from "ocr-document/dist/value/to-string";
 import Label from "ocr-document/dist/label/label";
 import StdVertices from "ocr-core/dist/vertices/standard";
