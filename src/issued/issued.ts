@@ -6,6 +6,7 @@ import Horizontal from "ocr-core/dist/vertex/validatable/horizontal-area";
 import StdRange from "lits/dist/range/standard";
 import Side from "ocr-core/dist/side/side";
 import Validated from "ocr-core/dist/vertices/validated";
+import ValidSequence from "ocr-core/dist/vertices/valid-sequence";
 import Approximate from "ocr-core/dist/vertex/validatable/approximate";
 import Vertex from "ocr-core/dist/vertex/vertex";
 import Standard from "ocr-core/dist/vertex/standard";
@@ -13,6 +14,7 @@ import StdVertices from "ocr-core/dist/vertices/standard";
 import ToString from "ocr-document/dist/value/to-string";
 import SortedDividerPoint from "ocr-core/dist/vertices/array/sorted-divider-point";
 import Flattens from "ocr-core/dist/vertices/iterable/flattens";
+import Text from "ocr-core/dist/vertex/validatable/text";
 
 export default class extends ToString<Vertices<Vertex>>  {
 
@@ -26,6 +28,14 @@ export default class extends ToString<Vertices<Vertex>>  {
         side : Side
     ) {
         super(new StdVertices());
+
+        // slash might remian from RT/RW or Tempat / Tgl Lahir
+        let slash = ValidSequence<Text>(vertices, (v:Vertex) => new Text(v,  ['/']));
+
+        if(slash.valid) {
+
+            vertices.remove(slash);
+        }
 
         // TODO range need to exceed 100%
         let fetch = Validated(
@@ -44,15 +54,9 @@ export default class extends ToString<Vertices<Vertex>>  {
             fetch.remove(noise);
         }
 
-        //console.log(fetch);
-
         let divider =  SortedDividerPoint(fetch);
 
-
         let flatten = Flattens(divider.splice(0, 3));
-
-        //console.log([...[...divider]].join('|'));
-        //console.log(flatten.join('|'));
 
         this.location = new LocationName(flatten);
 

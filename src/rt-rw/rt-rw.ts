@@ -53,9 +53,9 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
             let flatten = Flattens(divider.slice(0, 1));
 
-            console.log(flatten);
+            //console.log(flatten);
             let value = new Value(flatten);
-            console.log(Flattens([value]));
+            //console.log(Flattens([value]));
             vertices.remove(value);
             this.value = value;
         }

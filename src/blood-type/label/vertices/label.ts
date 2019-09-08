@@ -12,6 +12,7 @@ export default class extends StandardConfidence {
     ) {
         super();
 
+
         let approximate = new Find(vertices, (v:Vertex) => new Approximate(v, 3, ['Gol Darah']));
         if(approximate.valid) {
 

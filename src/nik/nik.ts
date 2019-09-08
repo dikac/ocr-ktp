@@ -29,7 +29,7 @@ export default class extends ToString implements Label  {
 
         let v = Flattens([value]);
         SortLeft(v);
-        console.log(v);
+        //console.log(v);
         vertices.remove(value);
 
         this.value = value;

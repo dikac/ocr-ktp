@@ -27,7 +27,7 @@ export default class Value extends Wrapper {
                 vertices,
                 (v:Vertex) => new TextValue(v)
             );
-        console.log(approximate);
+        //console.log(approximate);
             if(approximate.valid) {
 
                 SortLeft(approximate);
@@ -36,7 +36,7 @@ export default class Value extends Wrapper {
                 this.append(approximate);
             }
        // }
-        console.log(this);
+        //console.log(this);
 
     }
 

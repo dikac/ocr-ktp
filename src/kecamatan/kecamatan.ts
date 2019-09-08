@@ -8,6 +8,8 @@ import Vertex from "ocr-core/dist/vertex/vertex";
 import StdVertices from "ocr-core/dist/vertices/standard";
 import Flattens from "ocr-core/dist/vertices/iterable/flattens";
 import Flatten from "ocr-core/dist/vertices/flatten";
+import ValidSequence from "ocr-core/dist/vertices/valid-sequence";
+import Text from "ocr-core/dist/vertex/validatable/text";
 
 export default class extends ToString implements Label  {
 
@@ -19,6 +21,15 @@ export default class extends ToString implements Label  {
 
         super(new StdVertices());
 
+        // slash might remian from RT/RW or Tempat / Tgl Lahir
+        let slash = ValidSequence<Text>(vertices, (v:Vertex) => new Text(v,  ['/']));
+
+        if(slash.valid) {
+
+            vertices.remove(slash);
+        }
+
+
         let divider = new LabelTrimDivider<LabelKecamatan>(vertices, (v:Vertices) => new LabelKecamatan(v));
 
         this.label = divider.label;
@@ -28,13 +39,13 @@ export default class extends ToString implements Label  {
             vertices.remove(divider.label);
             //vertices.remove(Flattens(divider.removed));
 
-            // for(let d of divider.removed) {
-            //     console.log([... new Flatten(d)]);
-            // }
-            //
-            // for(let d of divider) {
-            //     console.log([... new Flatten(d)]);
-            // }
+            for(let d of divider.removed) {
+                console.log([... new Flatten(d)]);
+            }
+
+            for(let d of divider) {
+                console.log([... new Flatten(d)]);
+            }
 
             let flatten = Flattens(divider.slice(0, 1));
 

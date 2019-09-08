@@ -30,10 +30,11 @@ export default class extends StandardConfidence {
             this.append(label);
         }
 
-        //console.log(vertices.join('+'));
 
         let find = new Find(vertices, (v:Vertex) => new Text(v, ['/']));
 
+        console.log(vertices.join('|'));
+        console.log(find);
         if(find.valid) {
 
             this.append(find);
