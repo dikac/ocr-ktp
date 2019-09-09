@@ -5,6 +5,7 @@ import Vertex from "ocr-core/dist/vertex/vertex";
 import SortLeft from "ocr-core/dist/vertices/utility/sort-left";
 import Wrapper from "ocr-core/dist/vertices/wrapper";
 import Standard from "ocr-core/dist/vertices/standard";
+import Date from "ocr-document/dist/date/vertices/value";
 
 export default class Value extends Wrapper {
 
@@ -12,32 +13,25 @@ export default class Value extends Wrapper {
         vertices : Vertices
     ) {
         super(new Standard());
-        //
-        //
-        // let date = new Date(vertices);
-        //
-        // if(date.valid) {
-        //
-        //     this.vertices = date;
-        // }
 
-       // if(!this.valid) {
+        // date
+        let date = new Date(vertices);
+        if(date.valid) {
 
-            let approximate = Validated<TextValue>(
-                vertices,
-                (v:Vertex) => new TextValue(v)
-            );
-        //console.log(approximate);
+            this.vertices = date;
+        }
+
+        // text SEUMUR HIDUP
+        if(!this.valid) {
+
+            let approximate = Validated<TextValue>(vertices, (v:Vertex) => new TextValue(v));
+
             if(approximate.valid) {
 
                 SortLeft(approximate);
-
-
                 this.append(approximate);
             }
-       // }
-        //console.log(this);
-
+        }
     }
 
     // toString(): string {

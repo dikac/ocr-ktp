@@ -26,8 +26,6 @@ export default class extends AbstractFilter {
             this.setValid(true);
         }
 
-
-
         if(!this.valid) {
 
             let match = new Match(vertex, [/^SEUMUR/, /^HIDUP/, /SEUMUR$/, /HIDUP$/]);

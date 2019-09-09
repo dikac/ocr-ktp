@@ -37,12 +37,12 @@ export default class extends ToString implements Label  {
         vertices.remove(divider.label);
 
             let flatten = Flattens(divider.slice(0, 2));
-
+        //console.log(flatten.join('='));
             let value = new Value(flatten);
-
+        //console.log(value.join('='));
         vertices.remove(value);
 
-        //console.log(value.join('='));
+
 
         this.value = value;
 

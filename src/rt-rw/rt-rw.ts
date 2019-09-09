@@ -15,7 +15,6 @@ import Label from "ocr-document/dist/label/label";
 import Flattens from "ocr-core/dist/vertices/iterable/flattens";
 import LabelVillageKelurahan from "../village-kelurahan/label/vertices/label";
 
-
 export default class extends ToString<Vertices<Vertex>> implements Label  {
 
     readonly label : Vertices<Vertex> = new StdVertices();
@@ -53,9 +52,9 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
             let flatten = Flattens(divider.slice(0, 1));
 
-            //console.log(flatten);
+           // console.log(...flatten);
             let value = new Value(flatten);
-            //console.log(Flattens([value]));
+           // console.log(...Flattens([value]));
             vertices.remove(value);
             this.value = value;
         }
