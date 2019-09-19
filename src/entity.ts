@@ -175,7 +175,7 @@ export default class Entity extends Abstract implements Ktp {
 
         let approximate = new Find(vertices, (v:Vertex) => new Approximate(v, 3, ['PROVINSI']));
 
-        if(!approximate.valid) {
+        if(!approximate.valid()) {
 
             approximate = new Find(vertices, (v:Vertex) => new Approximate(v, 2, ['PROV','INSI']));
         }

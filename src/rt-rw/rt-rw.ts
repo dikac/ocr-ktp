@@ -36,7 +36,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
         // remove dash from LAKI-LAKI
         let dot = new Find(finds, (v : Vertex) => new Text(v, ['-']));
 
-        if(dot.valid) {
+        if(dot.valid()) {
 
             finds.remove(dot);
             vertices.remove(dot);
@@ -46,7 +46,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
         this.label = divider.label;
 
-        if(divider.label.valid) {
+        if(divider.label.valid()) {
 
             vertices.remove(divider.label);
 
@@ -60,18 +60,18 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
         }
 
 
-        if(!this.value.valid) {
+        if(!this.value.valid()) {
 
             let divider = new LabelTrimDivider<LabelRtRw>(finds, (v:Vertices) => new LabelVillageKelurahan(v));
 
-            if(divider.label.valid) {
+            if(divider.label.valid()) {
 
                 // fetch 1 line from the last
                 let line = Flattens(divider.removed.slice(divider.removed.length - 1));
-                if(line.valid) {
+                if(line.valid()) {
 
                     let value = new Value(line);
-                    if(value.valid) {
+                    if(value.valid()) {
                         // remove entire line
                         vertices.remove(line);
                         this.value = value;

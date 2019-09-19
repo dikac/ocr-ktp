@@ -22,7 +22,7 @@ export default class extends ToString implements Label  {
         let divider = new LabelTrimDivider<AddressLabel>(vertices, (v:Vertices) => new AddressLabel(v));
         this.label = divider.label;
 
-        if(divider.label.valid) {
+        if(divider.label.valid()) {
 
             let flatten = Flattens(divider.slice(0, 1));
 

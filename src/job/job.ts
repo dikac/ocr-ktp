@@ -34,7 +34,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
         // KARTU is printed as watermark in card, sometime registered
         let noise = Validated(fetch, (v:Vertex) => new Approximate(v, 2, ['KARTU']));
 
-        if(noise.valid) {
+        if(noise.valid()) {
 
             vertices.remove(noise);
             fetch.remove(noise);
@@ -43,7 +43,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
         let divider = new LabelTrimDivider<JobLabel>(fetch, (v:Vertices) => new JobLabel(v));
 
-        if(divider.label && divider.label.valid) {
+        if(divider.label && divider.label.valid()) {
 
             vertices.remove(divider.label);
 
@@ -55,7 +55,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
                 let job = new Job(flatten);
 
-                if(job.valid) {
+                if(job.valid()) {
 
                     vertices.remove(job);
 
@@ -79,7 +79,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
         //
         //     let job = new Job(new Flatten(v)/*vertices.clone*/);
         //
-        //     if(job.valid) {
+        //     if(job.valid()) {
         //
         //         vertices.remove(job);
         //         this.push(...job);
@@ -93,7 +93,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
         //console.log(vertices);
 
-        if(this.value.valid) {
+        if(this.value.valid()) {
             //
             // vertices.remove(<Vertices>job.llv.label);
             // vertices.remove(fetch);
@@ -111,7 +111,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
             );
            // console.log(approximates);
            // console.log(job.llv.label);
-            if(approximates.valid) {
+            if(approximates.valid()) {
 
                 this.value.remove(approximates);
             }
@@ -122,7 +122,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
                 (v: Vertex) => new Text(v, ['NOUBUK', 'K','KAR','ATU', 'OENDUP'])
             );
 
-            if(texts.valid) {
+            if(texts.valid()) {
 
                 this.value.remove(texts);
             }
@@ -136,7 +136,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
         // let line = new PointHorizontal(vertices);
         // let job2  = new Activity(line);
         //
-        // if(job2.valid) {
+        // if(job2.valid()) {
         //
         //     vertices.remove(job2);
         //     this.push(...job2);

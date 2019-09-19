@@ -30,7 +30,7 @@ export default class extends ToString implements Label  {
         // }
 
 
-        if(divider.label.valid) {
+        if(divider.label.valid()) {
 
             let flatten = Flattens(divider.slice(0, 1));
 
@@ -40,10 +40,10 @@ export default class extends ToString implements Label  {
 
                 let value = new UpperCase(flatten);
 
-                if(value.valid) {
+                if(value.valid()) {
 
 
-                    if(divider.label.valid) {
+                    if(divider.label.valid()) {
 
                         value.prepend(divider.label)
                     }

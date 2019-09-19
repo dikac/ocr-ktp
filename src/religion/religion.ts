@@ -36,7 +36,7 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
         this.value = value;
 
 
-        if(!this.value.valid) {
+        if(!this.value.valid()) {
 
 
         }

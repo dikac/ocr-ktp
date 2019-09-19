@@ -13,7 +13,7 @@ export default class extends StandardConfidence {
 
         let blood = new Find(vertices, (v : Vertex) => new Match(v, [/^[AOB0+\-]{1,2}$/]));
 
-        if(blood.valid) {
+        if(blood.valid()) {
 
             vertices.remove(blood);
 

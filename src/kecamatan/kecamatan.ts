@@ -24,7 +24,7 @@ export default class extends ToString implements Label  {
         // slash might remian from RT/RW or Tempat / Tgl Lahir
         let slash = ValidSequence<Text>(vertices, (v:Vertex) => new Text(v,  ['/']));
 
-        if(slash.valid) {
+        if(slash.valid()) {
 
             vertices.remove(slash);
         }

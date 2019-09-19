@@ -14,7 +14,7 @@ export default class extends StandardConfidence {
         // let text = new Finds<Text>
         // (vertices, (v:Vertex) => new Text(v,  ['kelamin', 'Jenis']));
         //
-        // if(text.valid) {
+        // if(text.valid()) {
         //
         //     console.log('text');
         //     console.log(text);
@@ -25,7 +25,7 @@ export default class extends StandardConfidence {
         let approximate = Validated<Approximate>
         (vertices, (v:Vertex) => new Approximate(v, 2, ['kelamin', 'Jenis']));
 
-        if(approximate.valid) {
+        if(approximate.valid()) {
             //console.log('approximate');
             //console.log(approximate);
             this.append(approximate);

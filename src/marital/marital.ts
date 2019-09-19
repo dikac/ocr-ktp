@@ -22,9 +22,9 @@ export default class extends ToString implements Label  {
 
         this.label = divider.label;
 
-        if(divider.label.valid) {
+        if(divider.label.valid()) {
 
-            if(divider.label.valid) {
+            if(divider.label.valid()) {
 
                 let flatten = Flattens(divider.slice(0, 1));
 
@@ -32,7 +32,7 @@ export default class extends ToString implements Label  {
 
                     let value = new Value(flatten);
 
-                    if(value.valid) {
+                    if(value.valid()) {
 
                         vertices.remove(value);
                     }
@@ -47,7 +47,7 @@ export default class extends ToString implements Label  {
         //
         //     let approximate = new Approximate(removed);
         //
-        //     if(approximate.valid) {
+        //     if(approximate.valid()) {
         //
         //         divider.unshift(removed);
         //     }
@@ -60,7 +60,7 @@ export default class extends ToString implements Label  {
         //     let value = new Value(v);
         //     //console.log(value.toString());
         //
-        //     if(value.valid) {
+        //     if(value.valid()) {
         //
         //         vertices.remove(value);
         //

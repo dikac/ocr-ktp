@@ -48,7 +48,7 @@ export default class  extends ToString implements Label  {
 
                 let value = new Value(flatten);
 
-                if(value.valid) {
+                if(value.valid()) {
 
                     vertices.remove(value);
                     //value.append(new Combine(value));

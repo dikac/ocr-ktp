@@ -20,13 +20,13 @@ export default class extends StandardConfidence {
             (v : Vertex) => new Approximate(v, 3,['Kel/Desa'])
         );
 
-        if(full.valid) {
+        if(full.valid()) {
 
             this.append(full);
 
         }
 
-        if(!this.valid) {
+        if(!this.valid()) {
 
             let list = new Map<string, number>();
 
@@ -39,7 +39,7 @@ export default class extends StandardConfidence {
             );
 
 
-            if(segmented.valid) {
+            if(segmented.valid()) {
 
 
                 //
@@ -55,7 +55,7 @@ export default class extends StandardConfidence {
                     (v : Vertex) => new Text(v, ['/'])
                 );
 
-                if(slash.valid) {
+                if(slash.valid()) {
 
                     this.append(slash);
                 }
@@ -73,7 +73,7 @@ export default class extends StandardConfidence {
         //
         // let segments = new Finds<ApproximateList>(vertices, (v : Vertex) => new ApproximateList(v, list2));
         //
-        // if(segments.valid) {
+        // if(segments.valid()) {
         //
         //     SortLeft(vertices);
         //

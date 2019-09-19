@@ -18,7 +18,7 @@ export default class extends AbstractFilter {
 
         let approximate = new ApproximateList(vertex, list);
 
-        if(approximate.valid) {
+        if(approximate.valid()) {
 
             vertex.text = <string> approximate.match;
 
@@ -26,11 +26,11 @@ export default class extends AbstractFilter {
             this.setValid(true);
         }
 
-        if(!this.valid) {
+        if(!this.valid()) {
 
             let match = new Match(vertex, [/^SEUMUR/, /^HIDUP/, /SEUMUR$/, /HIDUP$/]);
 
-            if(match.valid) {
+            if(match.valid()) {
 
                 vertex.text = <string>(match).match;
 

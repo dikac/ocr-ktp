@@ -12,7 +12,7 @@ export default class extends StandardConfidence {
         super();
         let label = Validated<Approximate>(vertices,(v : Vertex) => new Approximate(v, 1, ['NIK']));
 
-        if(label.valid) {
+        if(label.valid()) {
 
             this.append(label);
         }

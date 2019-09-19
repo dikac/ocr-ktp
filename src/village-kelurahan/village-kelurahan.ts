@@ -23,7 +23,7 @@ export default class extends ToString implements Label  {
 
         this.label = divider.label;
 
-        if(divider.label.valid) {
+        if(divider.label.valid()) {
 
             let flatten = Flattens(divider.slice(0, 1));
 
@@ -31,7 +31,7 @@ export default class extends ToString implements Label  {
 
                 let value = new Location(flatten);
 
-                if(value.valid) {
+                if(value.valid()) {
 
                     vertices.remove(value);
                 }
