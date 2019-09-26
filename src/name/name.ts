@@ -1,5 +1,5 @@
 import Vertices from "ocr-core/dist/vertices/vertices";
-import LabelName from "ocr-document/dist/name/vertices/label";
+import LabelName from "./vertices/label/name";
 import LabelTrimDivider from "ocr-core/dist/vertices/array/label-trim-divider";
 import Finds    from "ocr-document/dist/name/vertices/finds";
 import Flattens from "ocr-core/dist/vertices/iterable/flattens";
@@ -9,6 +9,7 @@ import Label from "ocr-document/dist/label/label";
 import Vertex from "ocr-core/dist/vertex/vertex";
 import LabelPlaceDateOfBirth from "../place-date-birth/label/vertices/label";
 import Flatten from "ocr-core/dist/vertices/flatten";
+
 
 export default class extends ToString<Vertices<Vertex>> implements Label  {
 
@@ -20,11 +21,19 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
         super(new Standard());
 
-        let divider = new LabelTrimDivider(vertices, (v:Vertices) => new LabelName(v));
+        // console.log('vertices --------');
+        // console.log(new Flatten(vertices).join('|'));
 
+
+        let divider = new LabelTrimDivider(vertices, (v:Vertices) => LabelName(v));
+
+        // console.log('=========================== REM');
+        // console.log(divider.removed.join('|'));
+        // console.log('===========================label');
+        // console.log(divider.label.join('|'));
         // console.log('divider --------');
         // for (let v of divider) {
-        //     console.log([...new Flatten(v)]);
+        //     console.log(v.join('|'));
         // }
 
         this.label = divider.label;
@@ -45,6 +54,11 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
 
             }
 
+            //
+            // console.log('===========================flatten');
+            // console.log(flatten);
+            // console.log('===========================value');
+            // console.log(Flattens([this.value]));
         }
 
 
@@ -59,8 +73,6 @@ export default class extends ToString<Vertices<Vertex>> implements Label  {
             this.value = new Finds(flatten);
 
         }
-
-
 
 
 

@@ -10,8 +10,6 @@ it("force console log", () => {
     spyOn(console, 'log').and.callThrough();
 });
 
-//let files : string[] = Fs.readdirSync(folder);
-
 export default function Loader (path : string) {
 
     describe("json test",   function() {

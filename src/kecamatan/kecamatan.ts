@@ -39,13 +39,13 @@ export default class extends ToString implements Label  {
             vertices.remove(divider.label);
             //vertices.remove(Flattens(divider.removed));
 
-            // for(let d of divider.removed) {
-            //     console.log([... new Flatten(d)].join('|'));
-            // }
-            //
-            // for(let d of divider) {
-            //     console.log([... new Flatten(d)].join('|'));
-            // }
+            for(let d of divider.removed) {
+                console.log([... new Flatten(d)].join('|'));
+            }
+
+            for(let d of divider) {
+                console.log([... new Flatten(d)].join('|'));
+            }
 
             let flatten = Flattens(divider.slice(0, 1));
 
